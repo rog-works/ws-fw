@@ -6,13 +6,11 @@
   "repository": "git@github.com:rog-works/conb2.git",
   "main": "dist/Index.js",
   "dependencies": {
-    "@types/crypto-js": "*",
-    "@types/superagent": "*",
-    "@types/yamljs": "*",
     "crypto-js": "*",
     "json-loader": "*",
     "moment": "*",
     "superagent": "*",
+    "ws": "*",
     "yaml-loader": "",
     "yamljs": "*"
   },
@@ -21,6 +19,10 @@
     "watch": "tsc --watch"
   },
   "devDependencies": {
+    "@types/crypto-js": "*",
+    "@types/superagent": "*",
+    "@types/yamljs": "*",
+    "@types/ws": "*",
     "typescript": "*",
     "ts-loader": "*"
   }
