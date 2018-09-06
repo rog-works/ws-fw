@@ -4,7 +4,7 @@
   "license": "MIT",
   "description": "contents browser with electron",
   "repository": "git@github.com:rog-works/conb2.git",
-  "main": "dist/src/Index.js",
+  "main": "dist/Index.js",
   "dependencies": {
     "@types/crypto-js": "*",
     "@types/superagent": "*",
