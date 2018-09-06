@@ -3,7 +3,7 @@ import * as WebSocket from 'ws';
 export class WS {
 	private _halt: boolean = false;
 	private _connected: boolean = false;
-	private _url: string = '';
+	private readonly _url: string = '';
 	private _ws: WebSocket;
 
 	public constructor(url: string) {
@@ -43,6 +43,7 @@ export class WS {
 
 	public send(data: any) {
 		if (this.connected) {
+			console.log('Send', data);
 			this._ws.send(data);
 		}
 	}
