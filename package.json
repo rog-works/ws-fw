@@ -1,0 +1,27 @@
+{
+  "name": "conb2",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "contents browser with electron",
+  "repository": "git@github.com:rog-works/conb2.git",
+  "main": "dist/src/Index.js",
+  "dependencies": {
+    "@types/crypto-js": "*",
+    "@types/superagent": "*",
+    "@types/yamljs": "*",
+    "crypto-js": "*",
+    "json-loader": "*",
+    "moment": "*",
+    "superagent": "*",
+    "yaml-loader": "",
+    "yamljs": "*"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "*",
+    "ts-loader": "*"
+  }
+}
