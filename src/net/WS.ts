@@ -1,21 +1,21 @@
-import {WebSocket} ws from 'ws';
+import * as WebSocket from 'ws';
 
 export class WS {
+	private _halt: boolean = false;
+	private _connected: boolean = false;
+	private _url: string = '';
+	private _ws: WebSocket;
+
 	public constructor(url: string) {
 		this._url = url;
-		this._ws = null;
-		this._halt = false;
+		this._ws = this.connect(this._url);
 	}
 
-	public get connected(): bool {
-		return this._ws !== null;
+	public get connected(): boolean {
+		return this._connected;
 	}
 
-	public connect(): WebSocket {
-		this._ws = this.connectaImpl(this._url);
-	}
-
-	private connectImpl(url: string): WebSocket {
+	private connect(url: string): WebSocket {
 		const ws = new WebSocket(url);
 		ws.on('open', this.onOpen.bind(this));
 		ws.on('close', this.onClose.bind(this));
@@ -26,31 +26,35 @@ export class WS {
 	private retry(retries: number) {
 		for (let i = 0; i < retries; i += 1) {
 			try {
-				this.connect();
+				this._ws = this.connect(this._url);
 				break;
-			} catch (Error e) {
-				console.log(e)
+			} catch (err) {
+				console.log(err)
 			}
 		}
 	}
 
 	public disconnect() {
-		this._halt = true;
-		this._ws.close();
-		this._ws = null;
+		if (this.connected) {
+			this._halt = true;
+			this._ws.close();
+		}
 	}
 
 	public send(data: any) {
-		this._ws.send(data);
+		if (this.connected) {
+			this._ws.send(data);
+		}
 	}
 
 	private onOpen() {
 		console.log('On Open');
+		this._connected = true;
 	}
 
 	private onClose() {
 		console.log('On Close');
-		this._ws = null;
+		this._connected = false;
 
 		if (!this._halt) {
 			this.retry(5);
@@ -61,4 +65,3 @@ export class WS {
 		console.log('On Message', data);
 	}
 }
-
