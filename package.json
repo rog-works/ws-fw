@@ -4,7 +4,7 @@
   "license": "MIT",
   "description": "contents browser with electron",
   "repository": "git@github.com:rog-works/conb2.git",
-  "main": "dist/Index.js",
+  "main": "dist/src/Index.js",
   "dependencies": {
     "crypto-js": "*",
     "json-loader": "*",
@@ -16,13 +16,18 @@
   },
   "scripts": {
     "build": "tsc",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "test": "mocha ./dist/tests/**/*.test.js"
   },
   "devDependencies": {
+    "@types/chai": "*",
     "@types/crypto-js": "*",
+    "@types/mocha": "*",
     "@types/superagent": "*",
     "@types/yamljs": "*",
     "@types/ws": "*",
+    "chai": "*",
+    "mocha": "*",
     "typescript": "*",
     "ts-loader": "*"
   }
