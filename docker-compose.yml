@@ -2,9 +2,8 @@ version: '3'
 services:
   app:
     container_name: ws-fw-app
-    image: vws-fw-app:latest
+    image: ws-fw-app:latest
     build: ./
     volumes:
       - ./src:/opt/app/src
-    command: 'tail -f /dev/null'
-
+    command: 'npm run watch'
