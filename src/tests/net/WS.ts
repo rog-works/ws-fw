@@ -1,9 +1,7 @@
 import {describe, it} from 'mocha';
-import * as chai from 'chai';
-import {WS} from 'net/WS';
+import {expect} from 'chai';
 
-describe('for WS', () => {
-	it('cannot connect to not exist ip', () => {
-		chai.assert.throws(() => new WS('ws://localhost:8888'));
-	});
+describe('for mocha', () => {
+	expect(2).to.equal(2);
+	expect(2).not.equal(1);
 });
