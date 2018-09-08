@@ -1,18 +1,18 @@
 {
-  "name": "conb2",
+  "name": "ws-fw",
   "version": "0.0.1",
   "license": "MIT",
-  "description": "contents browser with electron",
-  "repository": "git@github.com:rog-works/conb2.git",
-  "main": "dist/src/Index.js",
+  "description": "websocket framework",
+  "repository": "git@github.com:rog-works/ws-fw.git",
+  "main": "dist/Index.js",
   "dependencies": {
-    "crypto-js": "*",
-    "json-loader": "*",
-    "moment": "*",
-    "superagent": "*",
-    "ws": "*",
-    "yaml-loader": "",
-    "yamljs": "*"
+    "config-yml": "^0.10.2",
+    "crypto-js": "^3.1.8",
+    "inversify": "^4.13.0",
+    "js-yaml": "^3.12.0",
+    "moment": "^2.22.2",
+    "superagent": "^3.8.3",
+    "ws": "^6.0.0"
   },
   "scripts": {
     "build": "tsc",
@@ -20,15 +20,14 @@
     "test": "mocha ./dist/tests/**/*.test.js"
   },
   "devDependencies": {
-    "@types/chai": "*",
-    "@types/crypto-js": "*",
-    "@types/mocha": "*",
-    "@types/superagent": "*",
-    "@types/yamljs": "*",
-    "@types/ws": "*",
-    "chai": "*",
-    "mocha": "*",
-    "typescript": "*",
-    "ts-loader": "*"
+    "@types/chai": "^4.1.4",
+    "@types/crypto-js": "^3.1.43",
+    "@types/mocha": "^5.2.5",
+    "@types/superagent": "^3.8.4",
+    "@types/ws": "^6.0.1",
+    "@types/js-yaml": "^3.11.2",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "typescript": "^3.0.3"
   }
 }
