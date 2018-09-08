@@ -1,6 +1,6 @@
 import * as WebSocket from 'ws';
 
-export class WS {
+export class WSClient {
 	private _halt: boolean = false;
 	private _connected: boolean = false;
 	private readonly _url: string = '';
