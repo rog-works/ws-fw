@@ -3,8 +3,8 @@ import {Logger} from './log/Logger';
 
 export class App {
 	public constructor(
-		private runner: AsyncRunner,
-		private logger: Logger
+		private logger: Logger,
+		private runner: AsyncRunner
 	) {}
 
 	public async run() {
